@@ -1,14 +1,14 @@
 <template>
     <div>
         <b-row align-h="center" no-gutters>
-       <b-col lg="6" md="6" sm="11">
+       <b-col lg="6" md="8" sm="11">
         <b-card class="card-section mt-1"  v-for="Info in news.articles" :key="Info">
                 <h3>Author:- {{Info.author}}</h3>
                 <h6>{{Info.source.id}}</h6>
                 <p>Channel:- {{Info.source.name}}</p>
                 <h2>Headline:- {{Info.title}}</h2>
                 <p>{{Info.description}}</p>
-                <!-- <a href="Info.url"></a>    -->
+                <a :href="Info.url" target="_blank">Visit page</a>   
                 <img :src="Info.urlToImage" alt="" class="article-img w-100">
                 <p>Published:- {{new Date(`${Info.publishedAt}`).toLocaleString()}}</p> 
                 <p>{{Info.content}}</p> 

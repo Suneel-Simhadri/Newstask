@@ -1,6 +1,6 @@
 <template>
   <div class="header-section">
-    <b-col>
+    <b-col class="p-0">
       <div>
         <b-navbar toggleable="lg" type="dark" variant="dark">
           <img src="@/assets/new.jpg" class="img-logo"/>
@@ -25,10 +25,10 @@
               <b-nav-item-dropdown right>
                 <!-- Using 'button-content' slot -->
                 <template #button-content>
-                  <em>Account</em>
+                  <span>Account</span>
                 </template>
                 <b-dropdown-item href="#">Profile</b-dropdown-item>
-                <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+                <b-dropdown-item href="#" @click="signout">Sign Out</b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>
@@ -40,13 +40,19 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  methods :{
+    signout(){
+      this.$router.replace('/')
+      // localStorage.clear()
+    }
+  }
 };
 </script>
 
 <style scoped>
 .img-logo {
-    height: 4vh;
-    width: 2vw;
+  height: 4vh;
+  width: 2vw;
 }
 </style>

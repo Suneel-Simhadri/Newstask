@@ -24,16 +24,16 @@ const router = new VueRouter({
     routes
 });
 
-let a = 'saddam';
-router.beforeEach((to, from, next) => {
-    if(to.meta.isAuthenticated) {
-        if(a === 'sad') {
-            next()
-        } else {
-            next('/')
-        }
-    } else {
-        next()
-    }
-})
+// let a = 'saddam';
+// router.beforeEach((to, from, next) => {
+//     if(to.meta.isAuthenticated) {
+//         if(a === 'saddam') {
+//             next()
+//         } else {
+//             next('/')
+//         }
+//     } else {
+//         next()
+//     }
+// })
 export default router;
